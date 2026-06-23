@@ -200,9 +200,11 @@ a{color:inherit;text-decoration:none}
 .form-card h2{color:#fff;font-size:32px}
 .form-sub{color:#b6b1a6;margin-bottom:22px;font-size:15px}
 .form-row{display:grid;grid-template-columns:1fr 1fr;gap:10px}
-#quote-form input,#quote-form textarea{width:100%;background:#222220;border:1px solid #34332f;color:#fff;border-radius:var(--radius);padding:13px 14px;font-size:15px;font-family:'Inter',sans-serif;margin-bottom:10px}
+#quote-form input,#quote-form textarea,#quote-form select{width:100%;background:#222220;border:1px solid #34332f;color:#fff;border-radius:var(--radius);padding:13px 14px;font-size:15px;font-family:'Inter',sans-serif;margin-bottom:10px}
 #quote-form input::placeholder,#quote-form textarea::placeholder{color:#8b8780}
-#quote-form input:focus,#quote-form textarea:focus{outline:none;border-color:var(--gold)}
+#quote-form input:focus,#quote-form textarea:focus,#quote-form select:focus{outline:none;border-color:var(--gold)}
+#quote-form select{appearance:none;-webkit-appearance:none;background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%238b8780'><path d='M7 10l5 5 5-5z'/></svg>");background-repeat:no-repeat;background-position:right 12px center;background-size:20px;cursor:pointer}
+#quote-form select option{background:#1a1a1a;color:#fff}
 .hp{position:absolute;left:-9999px}
 .upload{display:flex;flex-direction:column;align-items:center;gap:6px;border:1px dashed #4a4842;border-radius:var(--radius);padding:18px;text-align:center;cursor:pointer;margin-bottom:16px;transition:border-color .2s}
 .upload:hover{border-color:var(--gold)}
@@ -215,7 +217,8 @@ a{color:inherit;text-decoration:none}
 .form-callback{text-align:center;font-size:14px;color:#cfc9bd;margin:16px auto 0;max-width:620px}
 .form-callback a{color:var(--gold-light);font-weight:600;border-bottom:1px solid var(--gold);white-space:nowrap}
 .form-callback a:hover{color:#fff}
-.form-legal{font-size:12px;color:#8b8780;text-align:center;margin-top:12px;display:flex;align-items:center;justify-content:center;gap:6px}
+.form-microcopy{text-align:center;font-size:13px;color:#9c988e;margin-top:10px}
+.form-legal{font-size:12px;color:#8b8780;text-align:center;margin-top:8px;display:flex;align-items:center;justify-content:center;gap:6px}
 .form-status{text-align:center;margin-top:12px;font-size:14px;min-height:20px}
 .form-status.ok{color:#7bd6a8}
 .form-status.err{color:#e89b9b}
@@ -232,8 +235,16 @@ a{color:inherit;text-decoration:none}
 .footer-cities{color:#9c988e;font-size:13px}
 .footer-legal{display:flex;justify-content:space-between;align-items:center;border-top:1px solid var(--line-dark);margin-top:36px;padding-top:18px;font-size:12px;color:#8b8780}
 
+/* ---------- CTA de rupture (entre réalisations et finitions) ---------- */
+.cta-break{background:var(--black);padding:56px 0;text-align:center;border-top:1px solid rgba(184,146,74,.18);border-bottom:1px solid rgba(184,146,74,.18)}
+.cta-break-title{font-family:'Cormorant Garamond',serif;font-size:clamp(24px,3.5vw,38px);font-weight:600;color:var(--cream);margin-bottom:28px}
+.cta-break-actions{display:flex;align-items:center;justify-content:center;gap:20px;flex-wrap:wrap}
+.cta-break-tel{display:inline-flex;align-items:center;gap:8px;color:var(--gold-light);font-size:17px;font-weight:600;letter-spacing:.02em}
+.cta-break-tel:hover{color:#fff}
+
 /* ---------- Barre d'action mobile (Appeler + Devis) ---------- */
-.mobile-bar{display:none}
+.mobile-bar{display:none;transition:transform .3s ease}
+.mobile-bar--hidden{transform:translateY(calc(100% + 20px))}
 .mobile-bar a{flex:1;display:inline-flex;align-items:center;justify-content:center;gap:7px;padding:14px;border-radius:var(--radius);font-weight:600;font-size:15px;box-shadow:0 4px 18px rgba(0,0,0,.28)}
 .mobile-bar-call{background:#fff;color:#1a1a1a;border:1px solid var(--gold)}
 .mobile-bar-quote{background:var(--gold);color:#1a1408}
