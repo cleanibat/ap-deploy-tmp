@@ -110,7 +110,7 @@
     var grp=el('g',{class:'azi-city'},g);
 
     // pin (drops in)
-    var pin=el('g',{class:'azi-pin',style:'animation-delay:'+(2.0+i*0.12).toFixed(2)+'s'},grp);
+    var pin=el('g',{class:'azi-pin',style:'animation-delay:'+(0.3+i*0.11).toFixed(2)+'s'},grp);
     el('line',{x1:c.x,y1:sy1,x2:c.x,y2:c.y,stroke:'var(--pin)','stroke-width':2},pin);
     el('circle',{cx:c.x,cy:hy,r:7,fill:'var(--pin)'},pin);
     el('circle',{cx:c.x,cy:hy,r:2.4,fill:'var(--ink)'},pin);
