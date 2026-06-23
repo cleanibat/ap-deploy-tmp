@@ -127,6 +127,25 @@
     el('circle',{cx:c.x,cy:c.y-13,r:24,fill:'#fff','fill-opacity':0},grp);
   });
 
+  // Injecte les régions manquantes si le HTML est servi depuis un cache
+  var svgParent=document.getElementById('aziMap');
+  if(svgParent){
+    [{d:'M482,197 L562,197 L594,217 L624,254 L576,250 L541,244 L514,263 L500,255 L483,228 Z',delay:'2.1s'},
+     {d:'M541,244 L576,250 L592,270 L586,303 L568,320 L541,323 L514,313 L506,290 L514,263 Z',delay:'2.5s'}
+    ].forEach(function(p){
+      if(!svgParent.querySelector('[style*="'+p.delay+'"]')){
+        var path=document.createElementNS(SVGNS,'path');
+        path.setAttribute('class','azi-region');
+        path.setAttribute('style','animation-delay:'+p.delay);
+        path.setAttribute('d',p.d);
+        path.setAttribute('fill','var(--accent)');
+        path.setAttribute('stroke','var(--deep)');
+        path.setAttribute('stroke-width','0.9');
+        svgParent.insertBefore(path,document.getElementById('aziCities'));
+      }
+    });
+  }
+
   var map=document.getElementById('aziMap');
   function play(){ map.classList.remove('play'); void map.offsetWidth; map.classList.add('play'); }
   map.addEventListener('mouseenter',play);
