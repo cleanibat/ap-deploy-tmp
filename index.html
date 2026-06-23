@@ -31,7 +31,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <!-- Polices -->
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Great+Vibes&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+<link rel="preload" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Great+Vibes&family=Inter:wght@400;500;600&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'" />
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Great+Vibes&family=Inter:wght@400;500;600&display=swap" /></noscript>
 
 <link rel="preload" as="image" href="assets/ext-pierre-taille.jpg" fetchpriority="high" />
 <link rel="stylesheet" href="styles.css?v=8" />
@@ -91,13 +92,15 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <span class="brand-text" id="brand-text" style="display:none"><span class="brand-script">Arti</span><span class="brand-bold">PIERRE</span></span>
     </a>
     <nav class="header-actions">
-      <a href="tel:+33769886454" class="phone-link" data-cta="phone">
+      <a href="tel:+33769886454" class="phone-link" data-cta="phone" aria-label="Appeler le 07 69 88 64 54">
         <i class="ico-phone" aria-hidden="true"></i><span>07 69 88 64 54</span>
       </a>
       <a href="#devis" class="btn btn-gold btn-sm">Devis gratuit</a>
     </nav>
   </div>
 </header>
+
+<main id="content">
 
 <!-- ============ HERO ============ -->
 <section class="hero">
@@ -383,6 +386,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   </div>
 </section>
 
+</main>
+
 <!-- ============ FOOTER ============ -->
 <footer class="site-footer">
   <div class="container footer-inner">
@@ -391,12 +396,12 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <p>Façadier enduiseur — enduit imitation pierre & décopierre.</p>
     </div>
     <div class="footer-col">
-      <h4>Contact</h4>
+      <h3>Contact</h3>
       <p><a href="tel:+33769886454" data-cta="phone">07 69 88 64 54</a></p>
       <p><a href="mailto:favreau3499@gmail.com">favreau3499@gmail.com</a></p>
     </div>
     <div class="footer-col">
-      <h4>Zone d'intervention</h4>
+      <h3>Zone d'intervention</h3>
       <p>Champagne-Ardenne &amp; Hauts-de-France</p>
       <p class="footer-cities">Reims · Épernay · Châlons · Charleville · Troyes · Lille · Amiens · Arras · Saint-Quentin · Beauvais</p>
     </div>
