@@ -21,28 +21,29 @@
     var n = idx + 1;
     var input  = document.getElementById("ba" + n + "-input");
     var before = document.getElementById("ba" + n + "-before");
-    var beforeImg = document.getElementById("ba" + n + "-before-img");
     var handle = document.getElementById("ba" + n + "-handle");
     if (!input || !before || !handle) return;
-    function syncImgWidth() {
-      if (beforeImg) beforeImg.style.width = slider.offsetWidth + "px";
+    function syncW() {
+      slider.style.setProperty("--slider-w", slider.offsetWidth + "px");
     }
     function setPos(v) {
       before.style.width = v + "%";
-      handle.style.left = v + "%";
+      handle.style.left  = v + "%";
       handle.setAttribute("aria-valuenow", Math.round(v));
     }
-    syncImgWidth();
-    setPos(50);
+    // Init après layout (requestAnimationFrame garantit que le slider a sa taille)
+    requestAnimationFrame(function () { syncW(); setPos(50); input.value = 50; });
     input.addEventListener("input", function () { setPos(this.value); });
     handle.addEventListener("keydown", function (e) {
       var v = parseInt(input.value, 10);
-      if (e.key === "ArrowLeft") { v = Math.max(0, v - 5); }
+      if (e.key === "ArrowLeft")      { v = Math.max(0, v - 5); }
       else if (e.key === "ArrowRight") { v = Math.min(100, v + 5); }
       else return;
       input.value = v; setPos(v); e.preventDefault();
     });
-    window.addEventListener("resize", syncImgWidth);
+    window.addEventListener("resize", function () {
+      requestAnimationFrame(syncW);
+    });
   });
 
   // ---- Formulaire devis ----
