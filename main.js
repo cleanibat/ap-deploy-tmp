@@ -142,3 +142,24 @@
     if(r.top < vh*0.95 && r.bottom > 0 && !map.classList.contains('play')) play();
   }, 250);
 })();
+
+// Scroll reveal pour les étapes
+(function(){
+  var els = document.querySelectorAll('[data-reveal]');
+  if (!els.length) return;
+  if ('IntersectionObserver' in window) {
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(e){
+        if (e.isIntersecting) {
+          var el = e.target;
+          var delay = parseInt(el.getAttribute('data-reveal-delay') || '0', 10);
+          setTimeout(function(){ el.classList.add('is-revealed'); }, delay);
+          io.unobserve(el);
+        }
+      });
+    }, {threshold: 0.2});
+    els.forEach(function(el){ io.observe(el); });
+  } else {
+    els.forEach(function(el){ el.classList.add('is-revealed'); });
+  }
+})();
