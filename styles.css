@@ -268,7 +268,8 @@ a{color:inherit;text-decoration:none}
 }
 
 /* ===== Carte zone d'intervention (dans le hero) ===== */
-.hero-map{display:flex;justify-content:center;align-items:center}
+.hero-map{display:flex;flex-direction:column;justify-content:center;align-items:center;gap:10px}
+.azi-map-label{margin:0;font-family:var(--sans,sans-serif);font-size:clamp(.7rem,1.1vw,.85rem);font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--accent,#d6b576);opacity:.85;text-align:center}
 .hero-map .azi-map{max-width:440px}
 .azi-map{
   position:relative;width:100%;max-width:560px;margin:0 auto;
