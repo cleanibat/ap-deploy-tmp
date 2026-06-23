@@ -34,7 +34,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Great+Vibes&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
 
 <link rel="preload" as="image" href="assets/ext-pierre-taille.jpg" fetchpriority="high" />
-<link rel="stylesheet" href="styles.css?v=7" />
+<link rel="stylesheet" href="styles.css?v=8" />
 
 <!-- Données structurées (SEO local) -->
 <script type="application/ld+json">
@@ -163,20 +163,31 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <div class="real-gallery">
       <figure class="real-feature">
         <img src="assets/ext-pool-house.jpg" alt="Pool house habillé en imitation pierre par Arti Pierre" loading="lazy" />
-        <figcaption>Pool house · pierre &amp; encadrements briquette</figcaption>
+        <figcaption><strong>Lille (59)</strong> · Pierre &amp; briquette · 85 m²</figcaption>
       </figure>
       <figure>
         <img src="assets/ext-pierre-taille.jpg" alt="Maison habillée en imitation pierre de taille par Arti Pierre" loading="lazy" />
-        <figcaption>Maison · pierre de taille &amp; chaînages d'angle</figcaption>
+        <figcaption><strong>Reims (51)</strong> · Pierre de taille · 160 m²</figcaption>
       </figure>
       <figure>
         <img src="assets/ext-longere.jpg" alt="Longère en imitation pierre réalisée par Arti Pierre" loading="lazy" />
-        <figcaption>Longère · finition moellon</figcaption>
+        <figcaption><strong>Arras (62)</strong> · Moellon · 120 m²</figcaption>
       </figure>
       <figure>
         <img src="assets/ext-volets-bleus.jpg" alt="Façade en imitation pierre avec volets bleus par Arti Pierre" loading="lazy" />
-        <figcaption>Façade de caractère · pierre de taille</figcaption>
+        <figcaption><strong>Charleville-Mézières (08)</strong> · Pierre de taille · 95 m²</figcaption>
       </figure>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CTA RUPTURE ============ -->
+<section class="cta-break">
+  <div class="container">
+    <p class="cta-break-title">Votre façade mérite le même résultat</p>
+    <div class="cta-break-actions">
+      <a href="#devis" class="btn btn-gold">Demander un devis gratuit</a>
+      <a href="tel:+33769886454" class="cta-break-tel" data-cta="phone"><i class="ico-phone" aria-hidden="true"></i> 07 69 88 64 54</a>
     </div>
   </div>
 </section>
@@ -341,33 +352,30 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <div class="form-card">
       <p class="kicker kicker-gold">Devis gratuit · réponse sous 24h</p>
       <h2>Estimez votre projet</h2>
-      <p class="form-sub">Ajoutez quelques photos de votre façade pour un chiffrage précis.</p>
+      <p class="form-sub">Quelques informations suffisent — nous vous recontactons sous 24h pour affiner ensemble.</p>
 
-      <form id="quote-form" action="contact.php" method="POST" enctype="multipart/form-data">
+      <form id="quote-form" action="contact.php" method="POST">
         <!-- Anti-spam (honeypot) : doit rester vide -->
         <input type="checkbox" name="botcheck" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true" />
 
         <div class="form-row">
-          <input type="text" name="nom" placeholder="Nom et prénom" required autocomplete="name" />
+          <input type="text" name="prenom" placeholder="Prénom" required autocomplete="given-name" />
           <input type="tel" name="telephone" placeholder="Téléphone" required autocomplete="tel" />
         </div>
         <input type="email" name="email" placeholder="Email" required autocomplete="email" />
-        <input type="text" name="ville" placeholder="Code postal / ville du chantier" required />
-        <textarea name="message" rows="3" placeholder="Décrivez votre projet (surface, type de support, délai…)"></textarea>
+        <select name="type_projet" required>
+          <option value="" disabled selected>Type de projet</option>
+          <option value="facade-exterieure">Façade extérieure</option>
+          <option value="mur-interieur">Mur intérieur</option>
+          <option value="cheminee">Cheminée</option>
+          <option value="autre">Autre</option>
+        </select>
+        <input type="text" name="ville" placeholder="Ville ou code postal" required autocomplete="postal-code" />
+        <textarea name="message" rows="3" placeholder="Décrivez brièvement votre projet (optionnel)"></textarea>
 
-        <label class="upload" for="photos">
-          <i class="ico-camera" aria-hidden="true"></i>
-          <span id="upload-label">Ajouter des photos de la façade</span>
-          <input type="file" name="photos[]" id="photos" accept="image/*" multiple />
-        </label>
-
-        <div class="form-trust">
-          <span><i class="ico-check" aria-hidden="true"></i> Réponse sous 24h</span>
-          <span><i class="ico-check" aria-hidden="true"></i> Sans engagement</span>
-          <span><i class="ico-check" aria-hidden="true"></i> 100% gratuit</span>
-        </div>
         <button type="submit" class="btn btn-gold btn-block">Recevoir mon devis gratuit</button>
-        <p class="form-legal"><i class="ico-lock" aria-hidden="true"></i> Vos données restent confidentielles · sans engagement</p>
+        <p class="form-microcopy">Réponse sous 24h · Devis gratuit &amp; sans engagement</p>
+        <p class="form-legal"><i class="ico-lock" aria-hidden="true"></i> Vos données restent confidentielles</p>
         <p class="form-status" id="form-status" role="status" aria-live="polite"></p>
       </form>
       <p class="form-callback">Vous préférez en parler de vive voix ? <a href="tel:+33769886454" data-cta="phone">07 69 88 64 54</a></p>
@@ -404,6 +412,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <a href="#devis" class="mobile-bar-quote">Devis gratuit</a>
 </div>
 
-<script src="main.js?v=4"></script>
+<script src="main.js?v=5"></script>
 </body>
 </html>
