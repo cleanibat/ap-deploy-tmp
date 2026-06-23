@@ -31,8 +31,8 @@
       handle.style.left  = v + "%";
       handle.setAttribute("aria-valuenow", Math.round(v));
     }
-    // Init après layout (requestAnimationFrame garantit que le slider a sa taille)
-    requestAnimationFrame(function () { syncW(); setPos(50); input.value = 50; });
+    // Init après layout
+    setTimeout(function () { syncW(); setPos(50); input.value = 50; }, 0);
     input.addEventListener("input", function () { setPos(this.value); });
     handle.addEventListener("keydown", function (e) {
       var v = parseInt(input.value, 10);
