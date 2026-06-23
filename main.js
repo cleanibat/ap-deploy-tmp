@@ -95,6 +95,8 @@
     {name:'Reims',     x:665.9,y:226.7},
     {name:'Charleville',x:714.3,y:174.6},
     {name:'Épernay',   x:651,  y:250},
+    {name:'Beauvais',  x:529,  y:211},
+    {name:'Compiègne', x:582,  y:213},
     {name:'Paris',     x:548,  y:272},
     {name:'Versailles',x:530,  y:280},
     {name:'Melun',     x:572,  y:301}
