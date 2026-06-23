@@ -17,17 +17,24 @@
   });
 
   // ---- Slider avant / après ----
-  (function () {
-    var input = document.getElementById("ba1-input");
-    var before = document.getElementById("ba1-before");
-    var handle = document.getElementById("ba1-handle");
+  document.querySelectorAll(".ba-slider").forEach(function (slider, idx) {
+    var n = idx + 1;
+    var input  = document.getElementById("ba" + n + "-input");
+    var before = document.getElementById("ba" + n + "-before");
+    var beforeImg = document.getElementById("ba" + n + "-before-img");
+    var handle = document.getElementById("ba" + n + "-handle");
     if (!input || !before || !handle) return;
+    function syncImgWidth() {
+      if (beforeImg) beforeImg.style.width = slider.offsetWidth + "px";
+    }
     function setPos(v) {
       before.style.width = v + "%";
       handle.style.left = v + "%";
       handle.setAttribute("aria-valuenow", Math.round(v));
     }
-    input.addEventListener("input", function () { setPos(input.value); });
+    syncImgWidth();
+    setPos(50);
+    input.addEventListener("input", function () { setPos(this.value); });
     handle.addEventListener("keydown", function (e) {
       var v = parseInt(input.value, 10);
       if (e.key === "ArrowLeft") { v = Math.max(0, v - 5); }
@@ -35,8 +42,8 @@
       else return;
       input.value = v; setPos(v); e.preventDefault();
     });
-    setPos(50);
-  })();
+    window.addEventListener("resize", syncImgWidth);
+  });
 
   // ---- Formulaire devis ----
   var form = document.getElementById("quote-form");
@@ -46,18 +53,6 @@
     form.addEventListener("focusin", function () {
       if (!started) { started = true; track("form_start", { form_name: "devis" }); }
     });
-
-    // Libellé du champ photos
-    var fileInput = document.getElementById("photos");
-    var fileLabel = document.getElementById("upload-label");
-    if (fileInput && fileLabel) {
-      fileInput.addEventListener("change", function () {
-        var n = fileInput.files ? fileInput.files.length : 0;
-        fileLabel.textContent = n === 0
-          ? "Ajouter des photos de la façade"
-          : n + " photo" + (n > 1 ? "s" : "") + " ajoutée" + (n > 1 ? "s" : "");
-      });
-    }
 
     var status = document.getElementById("form-status");
     form.addEventListener("submit", function (e) {
@@ -74,7 +69,6 @@
             status.className = "form-status ok";
             status.textContent = "Merci ! Votre demande est bien partie. Nous vous répondons sous 24h.";
             form.reset();
-            if (fileLabel) fileLabel.textContent = "Ajouter des photos de la façade";
           } else {
             throw new Error((res && res.message) || "Erreur");
           }
@@ -162,4 +156,17 @@
   } else {
     els.forEach(function(el){ el.classList.add('is-revealed'); });
   }
+})();
+
+// Masquer la barre mobile quand le formulaire est dans le viewport
+(function(){
+  var bar = document.querySelector('.mobile-bar');
+  var devis = document.getElementById('devis');
+  if (!bar || !devis || !('IntersectionObserver' in window)) return;
+  var io = new IntersectionObserver(function(entries){
+    entries.forEach(function(e){
+      bar.classList.toggle('mobile-bar--hidden', e.isIntersecting);
+    });
+  }, {threshold: 0.15});
+  io.observe(devis);
 })();
