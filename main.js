@@ -138,8 +138,9 @@
     io.observe(map);
   } else { play(); }
   // Fallback : si la carte est déjà visible au chargement (ex. dans le hero), on lance l'animation
-  requestAnimationFrame(function(){
+  // (setTimeout plutôt que requestAnimationFrame pour se déclencher même hors premier plan)
+  setTimeout(function(){
     var r=map.getBoundingClientRect(), vh=window.innerHeight||document.documentElement.clientHeight;
-    if(r.top < vh*0.9 && r.bottom > 0 && !map.classList.contains('play')) play();
-  });
+    if(r.top < vh*0.95 && r.bottom > 0 && !map.classList.contains('play')) play();
+  }, 250);
 })();
