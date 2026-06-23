@@ -273,7 +273,7 @@ a{color:inherit;text-decoration:none}
 .azi-map{
   position:relative;width:100%;max-width:560px;margin:0 auto;
   aspect-ratio:1000/978;background:transparent;
-  --accent:#c9a063;--deep:#a17e3f;--ink:#1a1408;
+  --accent:#c9a063;--deep:#a17e3f;--ink:#1a1408;--pin:#6b5223;
   -webkit-user-select:none;user-select:none;
 }
 .azi-map svg{position:absolute;inset:0;width:100%;height:100%;overflow:visible}
