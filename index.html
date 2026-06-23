@@ -88,7 +88,10 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <header class="site-header" id="top">
   <div class="container header-inner">
     <a href="#top" class="brand" aria-label="Arti Pierre — accueil">
-      <img src="assets/logo.png" alt="Arti Pierre" class="brand-img" onerror="this.style.display='none';document.getElementById('brand-text').style.display='inline-flex';" />
+      <picture>
+        <source srcset="assets/logo.webp" type="image/webp" />
+        <img src="assets/logo.png" alt="Arti Pierre" class="brand-img" width="470" height="150" onerror="this.style.display='none';document.getElementById('brand-text').style.display='inline-flex';" />
+      </picture>
       <span class="brand-text" id="brand-text" style="display:none"><span class="brand-script">Arti</span><span class="brand-bold">PIERRE</span></span>
     </a>
     <nav class="header-actions">
@@ -104,6 +107,10 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 <!-- ============ HERO ============ -->
 <section class="hero">
+  <picture class="hero-img-wrap">
+    <source srcset="assets/ext-pierre-taille.webp" type="image/webp" />
+    <img class="hero-img" src="assets/ext-pierre-taille.jpg" alt="" width="946" height="797" fetchpriority="high" />
+  </picture>
   <div class="container hero-inner">
     <div class="hero-text">
       <p class="eyebrow">Façadier enduiseur · imitation pierre</p>
@@ -165,19 +172,19 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
     <div class="real-gallery">
       <figure class="real-feature">
-        <picture><source srcset="assets/ext-pool-house.webp" type="image/webp" /><img src="assets/ext-pool-house.jpg" alt="Pool house habillé en imitation pierre par Arti Pierre" loading="lazy" /></picture>
+        <picture><source srcset="assets/ext-pool-house-400.webp 400w, assets/ext-pool-house.webp 938w" sizes="(max-width:680px) 90vw, 45vw" type="image/webp" /><img src="assets/ext-pool-house.jpg" alt="Pool house habillé en imitation pierre par Arti Pierre" loading="lazy" width="938" height="750" /></picture>
         <figcaption><strong>Le Touquet (62)</strong> · Pierre &amp; briquette · 85 m²</figcaption>
       </figure>
       <figure>
-        <picture><source srcset="assets/ext-pierre-taille.webp" type="image/webp" /><img src="assets/ext-pierre-taille.jpg" alt="Maison habillée en imitation pierre de taille par Arti Pierre" loading="lazy" /></picture>
+        <picture><source srcset="assets/ext-pierre-taille-400.webp 400w, assets/ext-pierre-taille.webp 946w" sizes="(max-width:680px) 90vw, 45vw" type="image/webp" /><img src="assets/ext-pierre-taille.jpg" alt="Maison habillée en imitation pierre de taille par Arti Pierre" loading="lazy" width="946" height="797" /></picture>
         <figcaption><strong>Épernay (51)</strong> · Pierre de taille · 160 m²</figcaption>
       </figure>
       <figure>
-        <picture><source srcset="assets/ext-longere.webp" type="image/webp" /><img src="assets/ext-longere.jpg" alt="Longère en imitation pierre réalisée par Arti Pierre" loading="lazy" /></picture>
+        <picture><source srcset="assets/ext-longere-400.webp 400w, assets/ext-longere.webp 943w" sizes="(max-width:680px) 90vw, 45vw" type="image/webp" /><img src="assets/ext-longere.jpg" alt="Longère en imitation pierre réalisée par Arti Pierre" loading="lazy" width="943" height="819" /></picture>
         <figcaption><strong>Laon (02)</strong> · Moellon · 120 m²</figcaption>
       </figure>
       <figure>
-        <picture><source srcset="assets/ext-volets-bleus.webp" type="image/webp" /><img src="assets/ext-volets-bleus.jpg" alt="Façade en imitation pierre avec volets bleus par Arti Pierre" loading="lazy" /></picture>
+        <picture><source srcset="assets/ext-volets-bleus-400.webp 400w, assets/ext-volets-bleus.webp 945w" sizes="(max-width:680px) 90vw, 45vw" type="image/webp" /><img src="assets/ext-volets-bleus.jpg" alt="Façade en imitation pierre avec volets bleus par Arti Pierre" loading="lazy" width="945" height="811" /></picture>
         <figcaption><strong>Chantilly (60)</strong> · Pierre de taille · 95 m²</figcaption>
       </figure>
     </div>
@@ -202,10 +209,10 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <h2>Toutes les pierres, un seul savoir-faire</h2>
     <p class="section-intro">Sculpté à la main et pigmenté dans la masse, l'enduit reproduit fidèlement le matériau de votre choix — teinte et calepinage personnalisés.</p>
     <div class="finishes">
-      <div class="finish"><picture><source srcset="assets/finition-pierre-taille.webp" type="image/webp" /><img class="finish-img" src="assets/finition-pierre-taille.jpg" alt="Finition imitation pierre de taille" loading="lazy" /></picture><h3>Pierre de taille</h3><p>Le grand classique, élégant et régulier.</p></div>
-      <div class="finish"><picture><source srcset="assets/finition-moellon.webp" type="image/webp" /><img class="finish-img" src="assets/finition-moellon.jpg" alt="Finition imitation moellon" loading="lazy" /></picture><h3>Moellon</h3><p>L'allure d'une bâtisse de campagne authentique.</p></div>
-      <div class="finish"><picture><source srcset="assets/finition-pierre-seche.webp" type="image/webp" /><img class="finish-img" src="assets/finition-pierre-seche.jpg" alt="Finition imitation pierre sèche" loading="lazy" /></picture><h3>Pierre sèche</h3><p>Le charme rustique des murs anciens.</p></div>
-      <div class="finish"><picture><source srcset="assets/finition-briquette.webp" type="image/webp" /><img class="finish-img" src="assets/finition-briquette.jpg" alt="Encadrements briquette imitation" loading="lazy" /></picture><h3>Briquette &amp; encadrements</h3><p>Parements et encadrements, ton chaleureux.</p></div>
+      <div class="finish"><picture><source srcset="assets/finition-pierre-taille-220.webp 220w, assets/finition-pierre-taille.webp 320w" sizes="(max-width:680px) 45vw, 220px" type="image/webp" /><img class="finish-img" src="assets/finition-pierre-taille.jpg" alt="Finition imitation pierre de taille" loading="lazy" width="320" height="260" /></picture><h3>Pierre de taille</h3><p>Le grand classique, élégant et régulier.</p></div>
+      <div class="finish"><picture><source srcset="assets/finition-moellon-220.webp 220w, assets/finition-moellon.webp 300w" sizes="(max-width:680px) 45vw, 220px" type="image/webp" /><img class="finish-img" src="assets/finition-moellon.jpg" alt="Finition imitation moellon" loading="lazy" width="300" height="280" /></picture><h3>Moellon</h3><p>L'allure d'une bâtisse de campagne authentique.</p></div>
+      <div class="finish"><picture><source srcset="assets/finition-pierre-seche-220.webp 220w, assets/finition-pierre-seche.webp 300w" sizes="(max-width:680px) 45vw, 220px" type="image/webp" /><img class="finish-img" src="assets/finition-pierre-seche.jpg" alt="Finition imitation pierre sèche" loading="lazy" width="300" height="280" /></picture><h3>Pierre sèche</h3><p>Le charme rustique des murs anciens.</p></div>
+      <div class="finish"><picture><source srcset="assets/finition-briquette-220.webp 220w, assets/finition-briquette.webp 220w" sizes="(max-width:680px) 45vw, 220px" type="image/webp" /><img class="finish-img" src="assets/finition-briquette.jpg" alt="Encadrements briquette imitation" loading="lazy" width="220" height="230" /></picture><h3>Briquette &amp; encadrements</h3><p>Parements et encadrements, ton chaleureux.</p></div>
     </div>
   </div>
 </section>
@@ -253,8 +260,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <a href="#devis" class="btn btn-gold">Parler de mon projet</a>
     </div>
     <div class="band-photos">
-      <picture><source srcset="assets/int-cheminee.webp" type="image/webp" /><img src="assets/int-cheminee.jpg" alt="Mur intérieur en imitation pierre autour d'un poêle, par Arti Pierre" loading="lazy" /></picture>
-      <picture><source srcset="assets/int-salon.webp" type="image/webp" /><img src="assets/int-salon.jpg" alt="Mur de salon en imitation pierre avec poutres, par Arti Pierre" loading="lazy" /></picture>
+      <picture><source srcset="assets/int-cheminee-400.webp 400w, assets/int-cheminee.webp 954w" sizes="(max-width:680px) 90vw, 45vw" type="image/webp" /><img src="assets/int-cheminee.jpg" alt="Mur intérieur en imitation pierre autour d'un poêle, par Arti Pierre" loading="lazy" width="954" height="851" /></picture>
+      <picture><source srcset="assets/int-salon-400.webp 400w, assets/int-salon.webp 1014w" sizes="(max-width:680px) 90vw, 45vw" type="image/webp" /><img src="assets/int-salon.jpg" alt="Mur de salon en imitation pierre avec poutres, par Arti Pierre" loading="lazy" width="1014" height="860" /></picture>
     </div>
   </div>
 </section>
@@ -392,7 +399,10 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <footer class="site-footer">
   <div class="container footer-inner">
     <div class="footer-brand">
-      <img src="assets/logo.png" alt="Arti Pierre" class="footer-logo" />
+      <picture>
+        <source srcset="assets/logo.webp" type="image/webp" />
+        <img src="assets/logo.png" alt="Arti Pierre" class="footer-logo" width="470" height="150" loading="lazy" />
+      </picture>
       <p>Façadier enduiseur — enduit imitation pierre & décopierre.</p>
     </div>
     <div class="footer-col">
