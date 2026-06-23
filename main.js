@@ -94,7 +94,10 @@
     {name:'Amiens',    x:544.3,y:162.4},
     {name:'Reims',     x:665.9,y:226.7},
     {name:'Charleville',x:714.3,y:174.6},
-    {name:'Troyes',    x:668.7,y:324.7}
+    {name:'Épernay',   x:651,  y:250},
+    {name:'Paris',     x:548,  y:272},
+    {name:'Versailles',x:530,  y:280},
+    {name:'Melun',     x:572,  y:301}
   ];
   function el(tag,attrs,parent){var e=document.createElementNS(SVGNS,tag);for(var k in attrs)e.setAttribute(k,attrs[k]);if(parent)parent.appendChild(e);return e;}
   var g=document.getElementById('aziCities');
